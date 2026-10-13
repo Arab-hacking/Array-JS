@@ -90,8 +90,8 @@
       //       } else if (n == "/") {
       //         log(`${i} ${n} ${j} = ${i / j}`)
       //       }
-            
-      //     } 
+
+      //     }
       //     log("---------------------------")
       //   }
       // }
@@ -103,47 +103,166 @@
       //   }
       // }
 
+      // let user = {
+      //   name: "Arab",
+      //   age: "17",
+      //   religion: "Islam"
+      // }
+      // let car1 = {
+      //   brand: "Mercedes-Benz",
+      //   model: "C-Class",
+      //   color: "Black",
+      //   year: "2012"
+      // }
+      // log(car1.brand)
 
-
-
-
-
-      function car(id, name, year, color) {
-        log(`Название: ${id}`);
+      function car(id, name, year, price, color) {
+        log(`ID: ${id}`);
         log(`Модель: ${name}`);
         log(`Год: ${year}`);
+        log(`Цена: ${price}`);
         log(`Цвет: ${color}`);
       }
-      fetch("https://www.lada.ru/api-v1/os-cars/938134/city-id")
-        .then((response) => response.json()) // превращаем ответ в объект JS
-        .then((data) => console.log(data))
-        .catch((error) => console.error("Ошибка:", error));
-      async function getCarConfig() {
-        const res = await fetch("https://www.lada.ru/api-v1/os-cars/938134/city-id")
-        const carConfig = await res.json()
-        car(carConfig[0].car_id, carConfig[0].family_name, 1, 1)
-      }
-      getCarConfig()
+      // fetch("https://www.lada.ru/api-v1/os-cars/938134/city-id")
+      //   .then((response) => response.json()) // превращаем ответ в объект JS
+      //   .then((data) => console.log(data))
+      //   .catch((error) => console.error("Ошибка:", error));
 
+      // let student = {
+      //   lastname: "Гарданов",
+      //   name: "Араб",
+      //   otch: "Салманович",
+      //   group: "2Р2",
+      // };
+
+      // let car_2 = {
+      //   brand: "BMW",
+      //   model: "M5",
+      //   "CAR CONFIG": "Stage2",
+      // };
+
+      // // Перезапись значение у ключа в обьекте
+      // log(car_2.brand, car_2.model);
+      // car_2.model = "M8";
+      // log(car_2.brand, car_2.model);
+
+      // // Оператор in
+      // log("brand" in car_2);
+      // // Удаление обьекта
+      // delete car_2.brand;
+      // delete car_2["CAR CONFIG"];
+      // log(car_2);
+
+      // var a = {
+      //   name: "Arab",
+      // };
+      // var b = {
+      //   name: "Arab",
+      // };
+      // log(a == b); // false
+      // log(a.name == b.name); // true
+      // var a = {};
+      // log(a == b);
+
+      // function userInfo(newName, newFirstName, newAge) {
+      //   let user = {
+      //     name: newName,
+      //     firstname: newFirstName,
+      //     age: newAge,
+      //   };
+      //   log(user);
+      // }
+      // userInfo("Arab", "Gardanov", 17);
+
+      // function carinfo(newBrand, newModel, newYear) {
+      //   let car3 = {
+      //     brand: newBrand,
+      //     model: newModel,
+      //     year: newYear,
+      //   };
+      //   return car3;
+      // }
+      // carinfo("Mercedes", "C-Class", 2026);
+
+      async function getCarConfig(countUser) {
+        const res = await fetch(
+          "https://www.lada.ru/api-v1/os-cars/938134/city-id",
+        );
+        const carConfig = await res.json();
+        let count = 0;
+        for (let i = 0; i < countUser; i++) {
+          count++;
+          car(
+            carConfig[i].car_id,
+            carConfig[i].family_name,
+            carConfig[i].year,
+            carConfig[i].price,
+            carConfig[i].color.title,
+          );
+          log("----------------------------------------");
+        }
+        log(count);
+      }
+      function car(id, name, year, price, color) {
+        log(`ID: ${id}`);
+        log(`Модель: ${name}`);
+        log(`Год: ${year}`);
+        log(`Цена: ${price}`);
+        log(`Цвет: ${color}`);
+      }
+
+      // let users = ["Arab","Abdul-Aziz","Said"]
+      // log(users[0])
+
+      // let cars= ["LADA", "BMW", "MERCEDES","AUDI"]
+      // for (let i = 0; i < cars.length; i++){
+      //   log(cars[i])
+      // }
+
+      // let users = ["Gardanov", "Aushev", "Merzhoev", "Albogachiev"]
+      // for (let i = 0; i < users.length; i++){
+      //   log(users[i])
+      // }
+
+      function list(arrayL) {
+        let count = 0;
+
+        for (let i = 0; i < arrayL.length; i++) {
+          count++;
+          log(arrayL[i]);
+        }
+        log(`Кол-во Пользователей: ${count}`);
+      }
+
+      let users = ["Arab", "Samir"];
+      list(users);
+
+      function cars(arrayA = []) {
+        // функция cars, параметр — массив (по умолчанию пустой)
+        let count = 0; // счётчик машин
+
+        for (let i = 0; i < arrayA.length; i++) {
+          // перебираем массив по индексам
+          count++; // увеличиваем счётчик на 1
+          console.log(`Машина №${count}: ${arrayA[i]}`); // выводим номер и название
+        }
+        log(`Кол-во Машин: ${count}`); // выводим общее количество
+      }
+
+      let cars1 = [
+        // массив с названиями машин
+        "LADA","BMW","MERCEDES",
+        "AUDI","OPEL","CHANGAN",
+        "LAMBORGINI","FERRARI","BUGATTI",
+        "MAZERATTI","TUNDRA",
+      ];
+
+      cars(cars1); // вызываем функцию с массивом
+
+
+
+      // методы массива
       
-      let user = {
-        name: "Arab",
-        age: "17",
-        religion: "Islam"
-      }
-      let car1 = {
-        brand: "Mercedes-Benz",
-        model: "C-Class",
-        color: "Black",
-        year: "2012"
-      }
-      log(car1.brand)
-      let student = {
-        lastname: "Гарданов",
-        name: "Араб",
-        otch: "Салманович",
-        group: "2Р2"
-      }
     </script>
   </body>
 </html>
