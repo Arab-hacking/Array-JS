@@ -224,45 +224,115 @@
       //   log(users[i])
       // }
 
-      function list(arrayL) {
-        let count = 0;
+      // function list(arrayL) {
+      //   let count = 0;
 
-        for (let i = 0; i < arrayL.length; i++) {
-          count++;
-          log(arrayL[i]);
-        }
-        log(`Кол-во Пользователей: ${count}`);
-      }
+      //   for (let i = 0; i < arrayL.length; i++) {
+      //     count++;
+      //     log(arrayL[i]);
+      //   }
+      //   log(`Кол-во Пользователей: ${count}`);
+      // }
 
-      let users = ["Arab", "Samir"];
-      list(users);
+      // let users = ["Arab", "Samir"];
+      // list(users);
 
-      function cars(arrayA = []) {
-        // функция cars, параметр — массив (по умолчанию пустой)
-        let count = 0; // счётчик машин
+      // function cars(arrayA = []) {
+      //   // функция cars, параметр — массив (по умолчанию пустой)
+      //   let count = 0; // счётчик машин
 
-        for (let i = 0; i < arrayA.length; i++) {
-          // перебираем массив по индексам
-          count++; // увеличиваем счётчик на 1
-          console.log(`Машина №${count}: ${arrayA[i]}`); // выводим номер и название
-        }
-        log(`Кол-во Машин: ${count}`); // выводим общее количество
-      }
+      //   for (let i = 0; i < arrayA.length; i++) {
+      //     // перебираем массив по индексам
+      //     count++; // увеличиваем счётчик на 1
+      //     console.log(`Машина №${count}: ${arrayA[i]}`); // выводим номер и название
+      //   }
+      //   log(`Кол-во Машин: ${count}`); // выводим общее количество
+      // }
 
-      let cars1 = [
-        // массив с названиями машин
-        "LADA","BMW","MERCEDES",
-        "AUDI","OPEL","CHANGAN",
-        "LAMBORGINI","FERRARI","BUGATTI",
-        "MAZERATTI","TUNDRA",
-      ];
+    //   let cars1 = [
+    //     // массив с названиями машин
+    //     "LADA","BMW","MERCEDES",
+    //     "AUDI","OPEL","CHANGAN",
+    //     "LAMBORGINI","FERRARI","BUGATTI",
+    //     "MAZERATTI","TUNDRA",
+    //   ];
 
-      cars(cars1); // вызываем функцию с массивом
+    //   cars(cars1); // вызываем функцию с массивом
 
 
 
-      // методы массива
+    //   // методы массива
       
+
+    // let fruits = [
+    //   ["Апельсин", "Мандарин", "Киви", //0
+    //     ["Араб", "Азиз", 2, //3
+    //       [1, //1
+    //         ["maga", 
+    //           ["alex", true, 
+    //             ["test", 23, 
+    //               [15,"Возраст", "hello",'121',
+    //                 ["Привет",
+    //                   [
+    //                     "Мерседес", "БМВ", 
+    //                     [
+    //                       "Категория", "ABC", 
+    //                       [
+    //                         "tEST", 
+    //                         [
+    //                           "Test"
+    //                         ]
+    //                       ]
+    //                     ]
+    //                   ]
+    //                 ]
+    //               ]
+    //             ]
+    //           ]
+    //         ]
+    //       ]
+    //     ]
+    //   ], 
+
+
+
+    //   ["Араб", "Абдул-Азиз", "Саид", 2, true]
+    
+    // ]
+    // log(fruits[0][3][3][1][1][2][2][4][1][2][2][1][0])
+
+
+    let users = [
+      {
+        name: "Араб",
+        age: 17
+      },
+      {
+        name: "Aziz",
+        age: 16
+      },
+      {
+        name: "Said",
+        age: 18
+      }
+    ]
+
+
+    for (let i = 0; i < users.length; i++){
+      log(users[i].name)
+      log(users[i].age)
+    }
+    log(users)
+    log(users[2].name = "Иван")
+
+    // ------------------------ ToString - метод который преобразует массив в строку ----------------
+    let cars = ["Mecedes", "BMW", "AUDI"]
+    log(cars.toString())
+    log(typeof(cars))
+
+
+    // ----------------- Сравнение Массивов -----------------
+    
     </script>
   </body>
 </html>
